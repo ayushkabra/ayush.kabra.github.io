@@ -397,7 +397,7 @@
     padding-bottom: 2px;
     transition: border-color 0.2s;
     position: relative;
-    z-index: 10;
+    z-index: 100;
     pointer-events: auto;
     cursor: pointer;
   }
@@ -692,7 +692,7 @@
       <span class="project-status status-built">Shipped</span>
       <div class="project-title">Your Life Story</div>
       <p class="project-desc">A platform to document and share the narrative of your life — events, lessons, memories — in a structured, meaningful way. Built with Cursor.</p>
-      <a href="https://yourlifestory.netlify.app/" target="_blank" class="project-link">View live ↗</a>
+      <a href="https://yourlifestory.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">View live ↗</a>
     </div>
 
     <div class="project-card reveal">
@@ -700,7 +700,7 @@
       <span class="project-status status-built">Prototype</span>
       <div class="project-title">Marketing Pipeline Tool</div>
       <p class="project-desc">An internal prototype built at Agilo to streamline marketing workflows and connect teams more efficiently.</p>
-      <a href="https://lovely-bonbon-c10ca4.netlify.app/" target="_blank" class="project-link">View prototype ↗</a>
+      <a href="https://lovely-bonbon-c10ca4.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">View prototype ↗</a>
     </div>
 
     <div class="project-card reveal">
@@ -708,7 +708,7 @@
       <span class="project-status status-built">Prototype</span>
       <div class="project-title">PictoBlox Community</div>
       <p class="project-desc">A community hub for PictoBlox users — built as an internal product prototype at Agilo Research.</p>
-      <a href="https://spiffy-alfajores-0cc83f.netlify.app/" target="_blank" class="project-link">View prototype ↗</a>
+      <a href="https://spiffy-alfajores-0cc83f.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">View prototype ↗</a>
     </div>
 
     <div class="project-card reveal">
@@ -796,9 +796,27 @@
   }
   animateCursor();
 
-  document.querySelectorAll('a, button, .project-card').forEach(el => {
+  document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; ring.style.opacity = '0.25'; });
     el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.opacity = '0.5'; });
+  });
+  
+  // Add hover effect to project cards without interfering with links
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => { 
+      if (!card.querySelector('.project-link')) {
+        cursor.style.transform = 'translate(-50%,-50%) scale(2)'; 
+        ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; 
+        ring.style.opacity = '0.25'; 
+      }
+    });
+    card.addEventListener('mouseleave', () => { 
+      if (!card.querySelector('.project-link')) {
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)'; 
+        ring.style.transform = 'translate(-50%,-50%) scale(1)'; 
+        ring.style.opacity = '0.5'; 
+      }
+    });
   });
 
   // Scroll reveal
