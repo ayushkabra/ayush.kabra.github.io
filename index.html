@@ -422,30 +422,33 @@
     cursor: pointer;
   }
   .project-link:hover { border-color: var(--rust); }
-  .project-actions {
+  .project-meta {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
     position: relative;
     z-index: 2;
   }
-  .project-actions .project-link {
-    margin-top: 0;
+  .project-links-row {
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
   }
   .backstory-btn {
     border: 1px solid rgba(255,255,255,0.22);
     background: transparent;
     color: #D7C9BA;
     border-radius: 100px;
-    padding: 7px 14px;
-    font-size: 11px;
+    padding: 6px 12px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: var(--sans);
+    flex-shrink: 0;
   }
   .backstory-btn:hover {
     border-color: rgba(196,84,26,0.8);
@@ -533,7 +536,7 @@
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
   .status-built { background: rgba(196,84,26,0.15); color: var(--rust); }
   .status-idea { background: rgba(255,255,255,0.06); color: #A89F94; }
@@ -806,66 +809,74 @@
 
     <div class="project-card reveal">
       <div class="project-num">01</div>
-      <span class="project-status status-wip">Work in Progress</span>
-      <div class="project-title">Birthday Directory</div>
-      <p class="project-desc">A place where anyone can list their birthday — a small way to bring warmth and connection to a lonely world.</p>
-      <div class="project-actions">
+      <div class="project-meta">
+        <span class="project-status status-wip">Work in Progress</span>
         <button class="backstory-btn" type="button" data-project="birthday-directory">Backstory</button>
       </div>
+      <div class="project-title">Birthday Directory</div>
+      <p class="project-desc">A place where anyone can list their birthday — a small way to bring warmth and connection to a lonely world.</p>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">02</div>
-      <span class="project-status status-built">Shipped</span>
+      <div class="project-meta">
+        <span class="project-status status-built">Shipped</span>
+        <button class="backstory-btn" type="button" data-project="ai-hiring-suite">Backstory</button>
+      </div>
       <div class="project-title">AI Hiring Suite</div>
       <p class="project-desc">An all-in-one HR tool that uses AI to structure JD creation, automate resume screening, and streamline candidate communication.</p>
-      <div class="project-actions">
+      <div class="project-links-row">
         <a href="https://ayushkabra.github.io/hireright-platform/" target="_blank" rel="noopener noreferrer" class="project-link">View live ↗</a>
-        <button class="backstory-btn" type="button" data-project="ai-hiring-suite">Backstory</button>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">03</div>
-      <span class="project-status status-built">Shipped</span>
+      <div class="project-meta">
+        <span class="project-status status-built">Shipped</span>
+        <button class="backstory-btn" type="button" data-project="your-life-story">Backstory</button>
+      </div>
       <div class="project-title">Your Life Story</div>
       <p class="project-desc">A platform to document and share the narrative of your life — events, lessons, memories — in a structured, meaningful way. Built with Cursor.</p>
-      <div class="project-actions">
+      <div class="project-links-row">
         <a href="https://yourlifestory.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">View live ↗</a>
-        <button class="backstory-btn" type="button" data-project="your-life-story">Backstory</button>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">04</div>
-      <span class="project-status status-built">Prototype</span>
+      <div class="project-meta">
+        <span class="project-status status-built">Prototype</span>
+        <button class="backstory-btn" type="button" data-project="marketing-pipeline-tool">Backstory</button>
+      </div>
       <div class="project-title">Marketing Pipeline Tool</div>
       <p class="project-desc">An internal prototype built at Agilo to streamline marketing workflows and connect teams more efficiently.</p>
-      <div class="project-actions">
+      <div class="project-links-row">
         <a href="https://lovely-bonbon-c10ca4.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">View prototype ↗</a>
-        <button class="backstory-btn" type="button" data-project="marketing-pipeline-tool">Backstory</button>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">05</div>
-      <span class="project-status status-built">Prototype</span>
+      <div class="project-meta">
+        <span class="project-status status-built">Prototype</span>
+        <button class="backstory-btn" type="button" data-project="pictoblox-community">Backstory</button>
+      </div>
       <div class="project-title">PictoBlox Community</div>
       <p class="project-desc">A community hub for PictoBlox users — built as an internal product prototype at Agilo Research.</p>
-      <div class="project-actions">
+      <div class="project-links-row">
         <a href="https://spiffy-alfajores-0cc83f.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">View prototype ↗</a>
-        <button class="backstory-btn" type="button" data-project="pictoblox-community">Backstory</button>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">06</div>
-      <span class="project-status status-built">Shipped</span>
-      <div class="project-title">Lagao Solar Platform</div>
-      <p class="project-desc">My own startup — a solar aggregator simplifying adoption for users and manufacturers across India with financing, monitoring, and verified partners. <em style="font-style: italic; color: #A89F94;">(Closed down)</em></p>
-      <div class="project-actions">
+      <div class="project-meta">
+        <span class="project-status status-built">Shipped</span>
         <button class="backstory-btn" type="button" data-project="lagao-solar-platform">Backstory</button>
       </div>
+      <div class="project-title">Lagao Solar Platform</div>
+      <p class="project-desc">My own startup — a solar aggregator simplifying adoption for users and manufacturers across India with financing, monitoring, and verified partners. <em style="font-style: italic; color: #A89F94;">(Closed down)</em></p>
     </div>
 
   </div>
@@ -983,27 +994,27 @@
   const backstoryContent = {
     'birthday-directory': {
       title: 'Birthday Directory',
-      body: 'I built this because birthdays can feel unexpectedly lonely. Even when people are around, many people feel unseen on that day, and as we grow older the wishes often reduce.\n\nThe idea was to create a warm community where people can exchange genuine wishes and build meaningful global connections around one simple moment: your birthday.'
+      body: 'I built Birthday Directory from a very emotional observation: birthdays are meant to be joyful, but for many people they can be one of the loneliest days of the year.\n\nEven when people are physically around, there is often a silent feeling of being forgotten. As we grow older, the excitement fades, messages reduce, and the day starts feeling less celebratory.\n\nI wanted to build a community where people can list birthdays, exchange wishes, and create meaningful connections across geographies. The intent was simple: use one small ritual to make people feel seen, valued, and less alone.'
     },
     'ai-hiring-suite': {
       title: 'AI Hiring Suite',
-      body: 'I wanted to design a single workflow for modern hiring teams.\n\nInstead of scattered tools, this concept brings JD creation, AI-led resume screening, interview scheduling, and candidate communication into one structured platform so HR teams can move faster with better consistency.'
+      body: 'This project came from a workflow problem I kept seeing: hiring teams operate across too many disconnected tools.\n\nJob description drafting happens in one place, resume screening in another, scheduling in another, and candidate communication often becomes fragmented.\n\nThe concept behind AI Hiring Suite was to create a single HR operating system where the full flow stays connected: JD creation, AI-assisted screening, scheduling, and communication. A one-stop platform like this can reduce context switching, speed up decisions, and make hiring more structured and repeatable.'
     },
     'your-life-story': {
       title: 'Your Life Story',
-      body: 'This was my first project built with Cursor and AI-first development tools.\n\nThe vision: give people a place to preserve real life stories, anecdotes, and turning points, and eventually transform those moments into short cinematic story formats.'
+      body: 'Your Life Story was my first serious project built with Cursor and AI-first workflows, so it was both a product and a personal milestone for me.\n\nThe core idea was to give people a space to preserve real stories from their life: moments, anecdotes, decisions, and memories that usually disappear over time.\n\nThe long-term vision was not just story storage, but storytelling transformation — helping users turn those anecdotes into richer narrative formats, even short movie-like outputs, so personal history becomes something alive and shareable.'
     },
     'marketing-pipeline-tool': {
       title: 'Marketing Pipeline Tool',
-      body: 'At work, the marketing team depended on developers even for simple in-product popups in PictoBlox.\n\nI built this prototype as an internal concept to reduce that dependency, speed up campaign iterations, and help stakeholders approve exactly what needed to be built before engineering effort started.'
+      body: 'I built this prototype after repeatedly seeing one internal bottleneck: marketing needed development support even for simple in-product campaigns and popups in PictoBlox.\n\nThat dependency slowed launches and made iteration expensive. Small campaign updates required engineering bandwidth, which delayed experimentation.\n\nSo I created this first version as an internal tool concept to streamline that process — reduce dependency, speed up approvals, and make stakeholder alignment easier by showing exactly what should be built before full implementation.'
     },
     'pictoblox-community': {
       title: 'PictoBlox Community',
-      body: 'This came from a recurring product gap: we had scattered WhatsApp groups but no structured feedback loop directly connected to product decisions.\n\nUser interviews gave insights, but they were slower and often too polite. This prototype explored a community-led system where release feedback, real issues, and user sentiment could reach product quickly and clearly.'
+      body: 'This prototype came from a long-standing product frustration. We had multiple WhatsApp groups with teachers and users, but there was no central feedback system that connected directly to product decisions.\n\nUser interviews did help, but they were time-consuming and often polite by nature, so the most actionable issues stayed buried.\n\nI wanted a more direct community mechanism where release feedback, real user pain points, and sentiment could flow quickly to product. PictoBlox Community was an attempt to make insights more continuous, transparent, and closer to real user reality.'
     },
     'lagao-solar-platform': {
       title: 'Lagao Solar Platform',
-      body: 'This was my first startup and a dream project I started with my friend Kartik Khandelwal.\n\nWe wanted to bridge the gap between manufacturers, distributors, and end users. Rooftop solar adoption felt confusing, time-consuming, and privacy-invasive for most users. Our goal was to simplify awareness, comparison, and decision-making in one trusted platform for India.'
+      body: 'Lagao Solar was my dream project and my first startup, started with my close friend Kartik Khandelwal.\n\nOur ambition was to build India\'s first solar aggregator platform — a true one-stop solution connecting manufacturers, distributors, and end users in one trusted flow.\n\nFor end users, rooftop solar decisions were confusing and time-consuming. People lacked awareness, struggled to compare options, and often faced privacy-invasive and fragmented processes.\n\nWe aimed to simplify the entire journey: clearer information, easier comparison, and more confident decision-making through a single platform experience built for trust and transparency.'
     }
   };
 
